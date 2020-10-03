@@ -222,6 +222,8 @@ EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='example')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # Stripe
 STRIPE_TEST_PUBLISHABLE_KEY=env('STRIPE_TEST_PUBLISHABLE_KEY')
 STRIPE_TEST_SECRET_KEY=env('STRIPE_TEST_SECRET_KEY')
