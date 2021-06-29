@@ -83,7 +83,7 @@ INSTALLED_APPS = [
 CRISPY_TEMPLATE_PACK = 'bootstrap4' # need to specify the CSS framework you want to use in your forms.
 
 MIDDLEWARE = [
-    'django.middleware.cache.UpdateCacheMiddleware', # to add per-site caching
+    #'django.middleware.cache.UpdateCacheMiddleware', # to add per-site caching
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -94,7 +94,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # Tying into middleware allows each panel to be instantiated on request and rendering to happen on response.
     'debug_toolbar.middleware.DebugToolbarMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware', # to add per-site caching
+    #'django.middleware.cache.FetchFromCacheMiddleware', # to add per-site caching
 ]
 
 ROOT_URLCONF = 'bookstore_project.urls'
@@ -159,7 +159,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -226,19 +226,19 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+# SSLCommerz
+STORE_ID=env('STORE_ID')
+STORE_PASSWORD=env('STORE_PASSWORD')
 
-# Stripe
-STRIPE_TEST_PUBLISHABLE_KEY=env('STRIPE_TEST_PUBLISHABLE_KEY')
-STRIPE_TEST_SECRET_KEY=env('STRIPE_TEST_SECRET_KEY')
 
 # Django-debug-toolbar
 INTERNAL_IPS = ('127.0.0.1',)
 
 
 # set three additional fields to add per-site caching
-CACHE_MIDDLEWARE_ALIAS = 'default'
+'''CACHE_MIDDLEWARE_ALIAS = 'default'
 CACHE_MIDDLEWARE_SECONDS = 604800 # number of seconds to cache a page. After the period is up, the cache expires and becomes empty.
-CACHE_MIDDLEWARE_KEY_PREFIX = ''
+CACHE_MIDDLEWARE_KEY_PREFIX = '''''
 
 
 

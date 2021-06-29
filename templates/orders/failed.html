@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+
+{% block title %} Failed {% endblock %}
+
+{% block content %}
+    <h2>Your Payment Failed! Please Try Again! Page will be redirected!</h2>
+{% endblock %}
+
+{% block script %}
+    <script>
+        function redirect(){
+            window.location.href = "{% url 'payment_request' %}";
+        }
+
+        setTimeout(redirect, 3000); //3000 is equivalent to 3 seconds
+    </script>
+{% endblock %}
