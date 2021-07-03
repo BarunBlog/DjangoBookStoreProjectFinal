@@ -70,6 +70,8 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'cloudinary_storage',
     'cloudinary',
+    'rangefilter',
+    'django_admin_listfilter_dropdown',
 
     # Local
     'users.apps.UsersConfig',

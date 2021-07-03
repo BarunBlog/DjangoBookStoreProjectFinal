@@ -2,7 +2,7 @@ from django.db import models
 
 
 
-class Orders(models.Model):
+class Order(models.Model):
 
     name = models.CharField(max_length=150)
     amount = models.DecimalField(max_digits=10, decimal_places=2)

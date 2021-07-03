@@ -13,7 +13,7 @@ from django.views.decorators.csrf import csrf_exempt
 from sslcommerz_python.payment import SSLCSession
 from decimal import Decimal
 
-from .models import Orders
+from .models import Order
 
 # Create your views here.
 
@@ -49,7 +49,7 @@ def paymentComplete(request):
         status = payment_data['status']
 
         if status == 'VALID':
-            Orders.objects.create(
+            Order.objects.create(
                 name = payment_data['value_a'],
                 amount = payment_data['amount'],
                 tran_id = payment_data['tran_id'],
